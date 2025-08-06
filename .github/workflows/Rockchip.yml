@@ -1,8 +1,10 @@
 name: Rockchip
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 30 18 * * 5
+  workflow_run:
+    workflows: ["Delete-Old-Workflows"]
+    types:
+      - completed
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master

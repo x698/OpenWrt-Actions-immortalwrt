@@ -1,8 +1,10 @@
 name: MTK7986
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 30 18 * * 2
+  workflow_run:
+    workflows: ["Delete-Old-Workflows"]
+    types:
+      - completed
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
   REPO_BRANCH: openwrt-24.10-6.6

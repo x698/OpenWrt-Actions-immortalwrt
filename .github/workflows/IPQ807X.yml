@@ -1,8 +1,10 @@
 name: IPQ807X
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 30 18 * * 1
+  workflow_run:
+    workflows: ["Delete-Old-Workflows"]
+    types:
+      - completed
 env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt
   REPO_BRANCH: main
