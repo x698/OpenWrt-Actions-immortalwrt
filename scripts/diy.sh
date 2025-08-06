@@ -5,7 +5,6 @@ sed -i 's/192.168.1.1/192.168.12.12/g' package/base-files/files/bin/config_gener
 rm -rf feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/scripts/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
-sed -i "s/primary:#5e72e4/primary:#5082bd/g" $(find ./feeds/luci/themes/luci-theme-argon/ -type f -name "cascade.css")
 
 # 修改主机名
 sed -i 's/ImmortalWrt/QWRT/g' package/base-files/files/bin/config_generate
