@@ -9,8 +9,8 @@ cp -f $GITHUB_WORKSPACE/scripts/bg1.jpg feeds/luci/themes/luci-theme-argon/htdoc
 sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 
 # 修改luci首页显示
-sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
-sed -i 's/ImmortalWrt/OpenWrt/g' include/version.mk
+sed -i 's/ImmortalWrt/OpenWrt/gi' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/OpenWrt/gi' include/version.mk
 sed -i '/Target Platform/d' feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/25_storage.js
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/29_ports.js
